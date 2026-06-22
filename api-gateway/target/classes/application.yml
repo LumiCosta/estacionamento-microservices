@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: vagas-service
+          uri: lb://vagas-service
+          predicates: [Path=/api/vagas/**]
+          filters:
+            - name: RequestRateLimiter
+              args: { redis-rate-limiter.replenishRate: 20, redis-rate-limiter.burstCapacity: 40 }
+        - id: reservas-service
+          uri: lb://reservas-service
+          predicates: [Path=/api/reservas/**]
+          filters: [CircuitBreaker=name=reservasCircuit]
+        - id: pagamentos-service
+          uri: lb://pagamentos-service
+          predicates: [Path=/api/pagamentos/**]
+          filters: [CircuitBreaker=name=pagamentosCircuit,fallbackUri=forward:/fallback/pagamentos]
+        - id: ocupacao-service
+          uri: lb://ocupacao-service
+          predicates: [Path=/api/ocupacao/**]
+server: { port: 8080 }
+eureka.client.service-url.defaultZone: http://localhost:8761/eureka
+management.endpoints.web.exposure.include: health,info,gateway,circuitbreakers

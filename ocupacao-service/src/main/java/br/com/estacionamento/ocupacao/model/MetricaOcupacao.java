@@ -1,0 +1,1 @@
+package br.com.estacionamento.ocupacao.model;import jakarta.persistence.*;import java.time.LocalDateTime;@Entity public class MetricaOcupacao{@Id @GeneratedValue(strategy=GenerationType.IDENTITY) public Long id; public Long vagaId; public boolean ocupada; public LocalDateTime criadoEm;}

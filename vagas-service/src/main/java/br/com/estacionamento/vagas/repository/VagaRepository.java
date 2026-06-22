@@ -1,0 +1,1 @@
+package br.com.estacionamento.vagas.repository;import br.com.estacionamento.vagas.model.Vaga;import org.springframework.data.jpa.repository.JpaRepository;import java.util.*;public interface VagaRepository extends JpaRepository<Vaga,Long>{List<Vaga> findByOcupadaFalseAndReservadaFalse();}
