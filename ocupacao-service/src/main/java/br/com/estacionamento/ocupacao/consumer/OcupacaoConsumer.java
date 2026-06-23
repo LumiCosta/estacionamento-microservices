@@ -1,1 +1,21 @@
-package br.com.estacionamento.ocupacao.consumer;import br.com.estacionamento.ocupacao.model.MetricaOcupacao;import br.com.estacionamento.ocupacao.repository.MetricaOcupacaoRepository;import org.springframework.amqp.rabbit.annotation.RabbitListener;import org.springframework.stereotype.Component;import java.time.LocalDateTime;import java.util.Map;@Component public class OcupacaoConsumer{private final MetricaOcupacaoRepository repo;public OcupacaoConsumer(MetricaOcupacaoRepository repo){this.repo=repo;}@RabbitListener(queues="ocupacao.metricas") public void receber(Map<String,Object> evento){MetricaOcupacao m=new MetricaOcupacao();m.vagaId=Long.valueOf(evento.get("vagaId").toString());m.ocupada=Boolean.parseBoolean(evento.get("ocupada").toString());m.criadoEm=LocalDateTime.now();repo.save(m);}}
+package br.com.estacionamento.ocupacao.consumer;
+import br.com.estacionamento.ocupacao.model.MetricaOcupacao;
+import br.com.estacionamento.ocupacao.repository.MetricaOcupacaoRepository;
+import org.springframework.amqp.rabbit.annotation.RabbitListener;
+import org.springframework.stereotype.Component;
+import java.time.LocalDateTime;
+import java.util.Map;
+@Component
+public class OcupacaoConsumer{
+    private final MetricaOcupacaoRepository repo;
+    public OcupacaoConsumer(MetricaOcupacaoRepository repo){
+        this.repo=repo;
+    }
+    @RabbitListener(queues="ocupacao.metricas")
+    public void receber(Map<String,Object> evento){
+        MetricaOcupacao m=new MetricaOcupacao();
+        m.vagaId=Long.valueOf(evento.get("vagaId").toString());
+        m.ocupada=Boolean.parseBoolean(evento.get("ocupada").toString());
+        m.criadoEm=LocalDateTime.now();
+        repo.save(m);}
+}
