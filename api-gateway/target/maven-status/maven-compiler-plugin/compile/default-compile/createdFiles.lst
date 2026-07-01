@@ -1,0 +1,2 @@
+br\com\estacionamento\gateway\ApiGatewayApplication.class
+br\com\estacionamento\gateway\FallbackController.class

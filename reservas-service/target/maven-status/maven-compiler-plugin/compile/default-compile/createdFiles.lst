@@ -1,0 +1,5 @@
+br\com\estacionamento\reservas\ReservasServiceApplication.class
+br\com\estacionamento\reservas\repository\ReservaRepository.class
+br\com\estacionamento\reservas\controller\ReservaController.class
+br\com\estacionamento\reservas\client\VagasClient.class
+br\com\estacionamento\reservas\model\Reserva.class

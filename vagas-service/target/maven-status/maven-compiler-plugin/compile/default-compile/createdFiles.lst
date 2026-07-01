@@ -1,0 +1,6 @@
+br\com\estacionamento\vagas\config\RabbitConfig.class
+br\com\estacionamento\vagas\repository\VagaRepository.class
+br\com\estacionamento\vagas\VagasServiceApplication.class
+br\com\estacionamento\vagas\model\Vaga.class
+br\com\estacionamento\vagas\controller\VagaController.class
+br\com\estacionamento\vagas\consumer\SensorConsumer.class

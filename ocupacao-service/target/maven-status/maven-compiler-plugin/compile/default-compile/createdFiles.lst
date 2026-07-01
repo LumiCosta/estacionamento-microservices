@@ -1,0 +1,6 @@
+br\com\estacionamento\ocupacao\consumer\OcupacaoConsumer.class
+br\com\estacionamento\ocupacao\repository\MetricaOcupacaoRepository.class
+br\com\estacionamento\ocupacao\config\RabbitConfig.class
+br\com\estacionamento\ocupacao\model\MetricaOcupacao.class
+br\com\estacionamento\ocupacao\OcupacaoServiceApplication.class
+br\com\estacionamento\ocupacao\controller\OcupacaoController.class

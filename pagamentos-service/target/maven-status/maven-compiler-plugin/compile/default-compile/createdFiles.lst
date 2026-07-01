@@ -1,0 +1,6 @@
+br\com\estacionamento\pagamentos\controller\PagamentoController.class
+br\com\estacionamento\pagamentos\config\RabbitConfig.class
+br\com\estacionamento\pagamentos\repository\PagamentoRepository.class
+br\com\estacionamento\pagamentos\service\PagamentoService.class
+br\com\estacionamento\pagamentos\PagamentosServiceApplication.class
+br\com\estacionamento\pagamentos\model\Pagamento.class
