@@ -7,17 +7,14 @@ spring:
         - id: vagas-service
           uri: lb://vagas-service
           predicates: [Path=/api/vagas/**]
-          filters:
-            - name: RequestRateLimiter
-              args: { redis-rate-limiter.replenishRate: 20, redis-rate-limiter.burstCapacity: 40 }
         - id: reservas-service
           uri: lb://reservas-service
           predicates: [Path=/api/reservas/**]
-          filters: [CircuitBreaker=name=reservasCircuit]
+          filters: []
         - id: pagamentos-service
           uri: lb://pagamentos-service
           predicates: [Path=/api/pagamentos/**]
-          filters: [CircuitBreaker=name=pagamentosCircuit,fallbackUri=forward:/fallback/pagamentos]
+          filters: []
         - id: ocupacao-service
           uri: lb://ocupacao-service
           predicates: [Path=/api/ocupacao/**]

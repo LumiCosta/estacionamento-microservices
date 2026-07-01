@@ -1,1 +1,7 @@
-package br.com.estacionamento.ocupacao.repository;import br.com.estacionamento.ocupacao.model.MetricaOcupacao;import org.springframework.data.jpa.repository.JpaRepository;public interface MetricaOcupacaoRepository extends JpaRepository<MetricaOcupacao,Long>{long countByOcupadaTrue();}
+package br.com.estacionamento.ocupacao.repository;
+import br.com.estacionamento.ocupacao.model.MetricaOcupacao;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface MetricaOcupacaoRepository extends JpaRepository<MetricaOcupacao,Long>{
+    long countByOcupadaTrue();
+}

@@ -1,1 +1,9 @@
-package br.com.estacionamento.ocupacao;import org.springframework.boot.SpringApplication;import org.springframework.boot.autoconfigure.SpringBootApplication;@SpringBootApplication public class OcupacaoServiceApplication{public static void main(String[] args){SpringApplication.run(OcupacaoServiceApplication.class,args);}}
+package br.com.estacionamento.ocupacao;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+@SpringBootApplication
+public class OcupacaoServiceApplication{
+    public static void main(String[] args){
+        SpringApplication.run(OcupacaoServiceApplication.class,args);
+    }
+}

@@ -1,1 +1,10 @@
-package br.com.estacionamento.reservas.model;import jakarta.persistence.*;import java.time.LocalDateTime;@Entity public class Reserva{@Id @GeneratedValue(strategy=GenerationType.IDENTITY) public Long id; public Long vagaId; public String cliente; public LocalDateTime inicio; public LocalDateTime fim; public String status;}
+package br.com.estacionamento.reservas.model;
+import jakarta.persistence.*;
+import java.time.LocalDateTime;
+@Entity public class Reserva{
+    @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+    public Long id; public Long vagaId;
+    public String cliente;
+    public LocalDateTime inicio;
+    public LocalDateTime fim;
+    public String status;}
